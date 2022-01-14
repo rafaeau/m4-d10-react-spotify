@@ -1,6 +1,7 @@
 import SingleCard from "../components/SingleCard"
 import { useState, useEffect } from "react"
 import { fetchMusic } from "../apicalls"
+import Header from "../components/Header"
 
 const Homepage = () => {
 
@@ -13,11 +14,12 @@ const Homepage = () => {
 
     return (
         <div className="home-wrap">
-            <h2>Made for you</h2>
+            <Header />
+            <h3 className="mt-3">Made for you</h3>
             <div className="cards-wrap">
                 {daftPunk && daftPunk.slice(0, 5).map((music) => <SingleCard src={music.album.cover_medium} key={music.id} />)}
             </div>
-            <h2>Recently played</h2>
+            <h3 className="mt-3">Recently played</h3>
             <div className="cards-wrap">
                 {disclosure && disclosure.slice(0, 5).map((music) => <SingleCard src={music.album.cover_medium} key={music.id} />)}
             </div>
